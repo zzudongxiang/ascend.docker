@@ -27,6 +27,18 @@ if [ -f ${DRIVER_HOME}/bin/setenv.bash ]; then
     source ${DRIVER_HOME}/bin/setenv.bash
 fi
 
+# ascend nnae
+export NNAE_HOME=${ASCEND_PATH}/nnae
+if [ -f ${NNAE_HOME}/set_env.sh ]; then
+    source ${NNAE_HOME}/set_env.sh
+fi
+
+# ascend nnrt
+export NNRT_HOME=${ASCEND_PATH}/nnrt
+if [ -f ${NNRT_HOME}/set_env.sh ]; then
+    source ${NNRT_HOME}/set_env.sh
+fi
+
 # ascend tbe
 export ASCEND_OPP_PATH=${ASCEND_HOME}/opp
 export TBE_IMPL_PATH=${ASCEND_OPP_PATH}/built-in/op_impl/ai_core/tbe
