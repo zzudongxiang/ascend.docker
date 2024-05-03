@@ -6,7 +6,7 @@ CONDA_PKG="/root/software/common/Anaconda3-2024.02-1-Linux-aarch64.sh"
 ASCEND_TOOLKIT="/root/software/cann7.0.1/Ascend-cann-toolkit_7.0.1_linux-aarch64.run"
 ASCEND_KERNEL="/root/software/cann7.0.1/Ascend-cann-kernels-910b_7.0.1_linux.run"
 TORCH_WHL="/root/software/torch2.1.0/torch_npu-2.1.0.post3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
-MINDSPORE_WHL="/home/zhangdx/software/mindspore2.2.14/mindspore-2.2.14-cp39-cp39-linux_aarch64.whl"
+MINDSPORE_WHL="/root/software/mindspore2.2.14/mindspore-2.2.14-cp39-cp39-linux_aarch64.whl"
 echo "CANN_7.0.1" > /root/version
 SSH_PORT="700"
 
