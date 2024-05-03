@@ -71,3 +71,6 @@ mpirun -n 8 ./bin/all_reduce_test -b 2048M -e 2048M -f 2 -p 8 && cd
 sh -c "$(wget -O- https://install.ohmyz.sh) -y"
 /root/anaconda3/bin/conda init zsh
 chsh -s $(which zsh)
+if [ `grep -c "conda env list && cat /root/version" ~/.zshrc` -ne '1' ];then
+    echo "conda env list && cat /root/version" >> ~/.zshrc
+fi
