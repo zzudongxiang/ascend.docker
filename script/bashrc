@@ -31,3 +31,6 @@ fi
 export ASCEND_OPP_PATH=${ASCEND_HOME}/opp
 export TBE_IMPL_PATH=${ASCEND_OPP_PATH}/built-in/op_impl/ai_core/tbe
 export PYTHONPATH=${TBE_IMPL_PATH}:${PYTHONPATH}
+
+# disable pip root warning
+export PIP_DISABLE_ROOT_WARNING=1
