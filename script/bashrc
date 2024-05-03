@@ -1,0 +1,33 @@
+
+# git log zh_CN
+export LESSCHARSET=utf-8
+
+# mpich toolkit
+export MPI_HOME=/root/mpich
+export LD_LIBRARY_PATH=${MPI_HOME}/lib:$LD_LIBRARY_PATH
+export PATH=${MPI_HOME}/bin:$PATH
+
+# ascend toolkit
+export ASCEND_PATH=/usr/local/Ascend
+
+# ascend toolkit
+export ASCEND_HOME=${ASCEND_PATH}/ascend-toolkit/latest
+export LD_LIBRARY_PATH=${ASCEND_HOME}/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${ASCEND_HOME}/aarch64-linux/lib64:$LD_LIBRARY_PATH
+export PATH=${ASCEND_HOME}/compiler/ccec_compiler/bin/:${PATH}
+if [ -f ${ASCEND_PATH}/ascend-toolkit/set_env.sh ]; then
+    source ${ASCEND_PATH}/ascend-toolkit/set_env.sh
+fi
+
+# ascend driver
+export DRIVER_HOME=${ASCEND_PATH}/driver
+export LD_LIBRARY_PATH=${DRIVER_HOME}/lib64:$LD_LIBRARY_PATH
+export PATH=${DRIVER_HOME}/tools:${PATH}
+if [ -f ${DRIVER_HOME}/bin/setenv.bash ]; then
+    source ${DRIVER_HOME}/bin/setenv.bash
+fi
+
+# ascend tbe
+export ASCEND_OPP_PATH=${ASCEND_HOME}/opp
+export TBE_IMPL_PATH=${ASCEND_OPP_PATH}/built-in/op_impl/ai_core/tbe
+export PYTHONPATH=${TBE_IMPL_PATH}:${PYTHONPATH}

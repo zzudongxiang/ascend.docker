@@ -1,0 +1,16 @@
+workdir/
+software/
+.vscode-server/
+.cache/
+.conda/
+.config/
+.dotnet/
+.local/
+.ssh/
+.bash_*
+.bashrc
+.lesshst
+.python_history
+.wget-hsts
+.zshrc
+
