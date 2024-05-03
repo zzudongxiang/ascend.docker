@@ -72,5 +72,6 @@ sh -c "$(wget -O- https://install.ohmyz.sh) -y"
 /root/anaconda3/bin/conda init zsh
 chsh -s $(which zsh)
 if [ `grep -c "conda env list && cat /root/version" ~/.zshrc` -ne '1' ];then
+    cat /root/script/bashrc >> ~/.zshrc
     echo "conda env list && cat /root/version" >> ~/.zshrc
 fi
