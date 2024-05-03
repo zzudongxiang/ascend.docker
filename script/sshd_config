@@ -1,5 +1,5 @@
 
-# add for ssh service
+# add for ssh server
 PermitRootLogin yes
 PubkeyAuthentication yes
 ClientAliveInterval 30
