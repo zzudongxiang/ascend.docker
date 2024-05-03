@@ -3,6 +3,7 @@
 NAME=$1
 INSTALL_WHL=$2
 
+# torch use py3.10 and mindspore use py3.9
 if [[ $(echo ${NAME} | grep "torch") != "" ]]; then
     PY_VERSION="3.10"
 elif [[ $(echo ${NAME} | grep "mindspore") != "" ]]; then
@@ -36,13 +37,18 @@ ${ASCEND_INSTALL_PATH}/Ascend-cann-kernels*.run --quiet --install && source /roo
 
 # install and test mindspore
 pip install -r /root/script/requirements.txt
-pip install ${INSTALL_WHL}
-echo -e "\033[32mTest ${NAME}\033[0m"
-if [[ $(echo ${NAME} | grep "torch") ]]; then
-    python -c "import torch;import torch_npu; a = torch.ones(3, 4).npu(); print(a + a);"
-elif [[ $(echo ${NAME} | grep "mindspore") ]]; then
-    python -c "import mindspore;mindspore.set_context(device_target='Ascend');mindspore.run_check()"
+
+if [-f ${INSTALL_WHL}]; then
+    pip install ${INSTALL_WHL}
+    echo -e "\033[32mTest ${NAME}\033[0m"
+    if [[ $(echo ${NAME} | grep "torch") ]]; then
+        python -c "import torch;import torch_npu; a = torch.ones(3, 4).npu(); print(a + a);"
+    elif [[ $(echo ${NAME} | grep "mindspore") ]]; then
+        python -c "import mindspore;mindspore.set_context(device_target='Ascend');mindspore.run_check()"
+    else
+        echo "NULL Test Function"
+    fi
 else
-    echo "NULL"
+    echo "*.whl not exist: ${INSTALL_WHL}"
 fi
 
