@@ -37,12 +37,18 @@ pip install -r /root/script/requirements.txt -i https://pypi.tuna.tsinghua.edu.c
 
 # init bashrc and sshd_config
 echo -e "\033[32m[4/7] init bashrc and sshd_config...\033[0m"
-if [ `grep -c "conda env list && cat /root/version" ~/.bashrc` -ne '0' ];then
+if [ `grep -c "conda env list && cat /root/version" ~/.bashrc` -ne '1' ];then
     cat /root/.ssh/authorized_keys.host > ~/.ssh/authorized_keys
     cat /root/script/sshd_config >> /etc/ssh/sshd_config
     cat /root/script/bashrc >> ~/.bashrc
     echo "conda env list && cat /root/version" >> ~/.bashrc
 fi
+
+# copy ascend file
+ASCEND_INSTALL_PATH="/usr/local/Ascend/software"
+mkdir ${ASCEND_INSTALL_PATH}
+cp ${ASCEND_TOOLKIT} ${ASCEND_INSTALL_PATH}/
+cp ${ASCEND_KERNEL} ${ASCEND_INSTALL_PATH}/
 
 # install ascend-toolkit
 echo -e "\033[32m[5/7] install ascend-toolkit...\033[0m"
