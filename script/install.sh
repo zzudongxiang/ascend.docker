@@ -33,6 +33,7 @@ fi
 
 /root/anaconda3/bin/conda init
 source /root/script/conda
+conda install -c conda-forge conda-bash-completion -y
 pip install -r /root/script/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # init bashrc and sshd_config
