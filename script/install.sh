@@ -13,7 +13,7 @@ apt install -y gcc gcc-7 g++ gdb make cmake net-tools iproute2
 apt install -y autoconf automake unzip pciutils gfortran flex
 apt install -y zlib1g zlib1g-dev libsqlite3-dev libssl-dev 
 apt install -y libtool libffi-dev libblas-dev libblas3 libnuma-dev
-apt install -y libgl1-mesa-glx
+apt install -y zsh libgl1-mesa-glx
 
 # install mpich
 echo -e "\033[32m[2/7] install mpich...\033[0m"
@@ -66,3 +66,8 @@ npu-smi info
 cd /usr/local/Ascend/ascend-toolkit/latest/tools/hccl_test
 make ASCEND_DIR=/usr/local/Ascend/ascend-toolkit/latest
 mpirun -n 8 ./bin/all_reduce_test -b 2048M -e 2048M -f 2 -p 8 && cd
+
+# install zsh
+sh -c "$(wget -O- https://install.ohmyz.sh) -y"
+/root/anaconda3/bin/conda init zsh
+chsh -s $(which zsh)
