@@ -8,11 +8,11 @@ ASCEND_KERNEL=$4
 # update apt packages
 echo -e "\033[32m[1/7] update apt packages...\033[0m"
 apt update && apt upgrade -y
-apt install -y git git-lfs nano openssh-server openssl 
-apt install -y gcc g++ gdb make cmake net-tools iproute2 
-apt install -y autoconf automake unzip pciutils gfortran 
+apt install -y git git-lfs nano openssh-server openssl tcl patch
+apt install -y gcc gcc-7 g++ gdb make cmake net-tools iproute2 
+apt install -y autoconf automake unzip pciutils gfortran flex
 apt install -y zlib1g zlib1g-dev libsqlite3-dev libssl-dev 
-apt install -y libtool libffi-dev libblas-dev libblas3
+apt install -y libtool libffi-dev libblas-dev libblas3 libnuma-dev
 
 # install mpich
 echo -e "\033[32m[2/7] install mpich...\033[0m"
