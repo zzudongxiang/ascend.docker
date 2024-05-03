@@ -15,3 +15,11 @@ absl-py
 wheel
 typing_extensions 
 pyyaml
+jieba
+rouge_chinese
+nltk
+tokenizers
+pyarrow
+sentencepiece
+ftfy
+opencv-python

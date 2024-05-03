@@ -13,6 +13,7 @@ apt install -y gcc gcc-7 g++ gdb make cmake net-tools iproute2
 apt install -y autoconf automake unzip pciutils gfortran flex
 apt install -y zlib1g zlib1g-dev libsqlite3-dev libssl-dev 
 apt install -y libtool libffi-dev libblas-dev libblas3 libnuma-dev
+apt install -y libgl1-mesa-glx
 
 # install mpich
 echo -e "\033[32m[2/7] install mpich...\033[0m"
