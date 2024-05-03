@@ -15,4 +15,3 @@ absl-py
 wheel
 typing_extensions 
 pyyaml
-jinjia2
