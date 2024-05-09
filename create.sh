@@ -19,7 +19,6 @@ docker run -it --ipc=host --name ${NAME}-${VERSION} \
     -v ~/.ssh/authorized_keys:/root/.ssh/authorized_keys.host \
     -v /etc/localtime:/etc/localtime \
     --workdir=/root \
-    --network=host \
     --privileged \
     --device=/dev/davinci0 \
     --device=/dev/davinci1 \
@@ -37,5 +36,6 @@ docker run -it --ipc=host --name ${NAME}-${VERSION} \
     -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
     -v /usr/local/dcmi:/usr/local/dcmi \
     -v /etc/ascend_install.info:/etc/ascend_install.info \
+    -p 802:802 \
     -u root \
     ubuntu:20.04 /bin/bash

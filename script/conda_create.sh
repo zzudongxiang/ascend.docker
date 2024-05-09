@@ -38,7 +38,7 @@ ${ASCEND_INSTALL_PATH}/Ascend-cann-kernels*.run --quiet --install && source /roo
 # install and test mindspore
 pip install -r /root/script/requirements.txt
 
-if [ -z ${INSTALL_WHL} ]; then
+if [ ! -z ${INSTALL_WHL} ]; then
     pip install ${INSTALL_WHL}
     echo -e "\033[32mTest ${NAME}\033[0m"
     if [[ $(echo ${NAME} | grep "torch") ]]; then
@@ -51,4 +51,3 @@ if [ -z ${INSTALL_WHL} ]; then
 else
     echo "Skip install *.whl: ${INSTALL_WHL}"
 fi
-
