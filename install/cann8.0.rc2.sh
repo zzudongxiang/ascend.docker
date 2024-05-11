@@ -13,7 +13,8 @@ SSH_PORT="802"
 # start install.sh
 bash /root/script/install.sh ${MPICH_TAR} ${CONDA_PKG} ${ASCEND_TOOLKIT} ${ASCEND_KERNEL}
 source /root/script/conda && source /root/script/bashrc
-echo "Port ${SSH_PORT}" >> /etc/ssh/sshd_config
+#echo "Port ${SSH_PORT}" >> /etc/ssh/sshd_config
+echo "Port 22" >> /etc/ssh/sshd_config
 service ssh start
 
 # create conda env

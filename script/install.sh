@@ -54,10 +54,12 @@ cp ${ASCEND_KERNEL} ${ASCEND_INSTALL_PATH}/
 
 # install ascend-toolkit
 echo -e "\033[32m[5/7] install ascend-toolkit...\033[0m"
+chmod +x ${ASCEND_TOOLKIT}
 ${ASCEND_TOOLKIT} --quiet --install && source /root/script/bashrc
 
 # install ascend-kernels
 echo -e "\033[32m[6/7] install ascend-kernels\033[0m"
+chmod +x ${ASCEND_KERNEL}
 ${ASCEND_KERNEL} --quiet --install && source /root/script/bashrc
 
 # test npu-smi and mpirun
@@ -66,12 +68,3 @@ npu-smi info
 cd /usr/local/Ascend/ascend-toolkit/latest/tools/hccl_test
 make ASCEND_DIR=/usr/local/Ascend/ascend-toolkit/latest
 mpirun -n 8 ./bin/all_reduce_test -b 2048M -e 2048M -f 2 -p 8 && cd
-
-# install zsh
-sh -c "$(wget -O- https://install.ohmyz.sh) -y"
-/root/anaconda3/bin/conda init zsh
-chsh -s $(which zsh)
-if [ `grep -c "conda env list && cat /root/version" ~/.zshrc` -ne '1' ];then
-    cat /root/script/bashrc >> ~/.zshrc
-    echo "conda env list && cat /root/version" >> ~/.zshrc
-fi

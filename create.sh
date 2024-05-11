@@ -1,9 +1,10 @@
 NAME=$1
 VERSION=$2
+PORT=$3
 
 if ! [ -f ~/install/${VERSION}.sh ]; then
     echo "Please Input cann version like:"
-    echo ">> ./create.sh test cann8.0.rc2"
+    echo ">> ./create.sh test cann8.0.rc2 802"
     echo "-------------------"
     ls cann | grep *.sh
     echo "-------------------"
@@ -36,6 +37,6 @@ docker run -it --ipc=host --name ${NAME}-${VERSION} \
     -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
     -v /usr/local/dcmi:/usr/local/dcmi \
     -v /etc/ascend_install.info:/etc/ascend_install.info \
-    -p 802:802 \
+    -p ${PORT}:22 \
     -u root \
     ubuntu:20.04 /bin/bash

@@ -31,8 +31,10 @@ fi
 # install ascend-toolkit and ascend-kernels
 ASCEND_INSTALL_PATH="/usr/local/Ascend/software"
 echo -e "\033[32mInstall Ascend-Toolkit for ${NAME}...\033[0m"
+chmod +x ${ASCEND_INSTALL_PATH}/Ascend-cann-toolkit*.run
 ${ASCEND_INSTALL_PATH}/Ascend-cann-toolkit*.run --quiet --install && source /root/script/bashrc
 echo -e "\033[32mInstall Ascend-Kernels for ${NAME}...\033[0m"
+chmod +x ${ASCEND_INSTALL_PATH}/Ascend-cann-kernels*.run
 ${ASCEND_INSTALL_PATH}/Ascend-cann-kernels*.run --quiet --install && source /root/script/bashrc
 
 # install and test mindspore
