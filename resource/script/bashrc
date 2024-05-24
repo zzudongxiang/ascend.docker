@@ -1,6 +1,7 @@
 
-# git log zh_CN
+# git log zh_CN and pip warning
 export LESSCHARSET=utf-8
+export PIP_DISABLE_ROOT_WARNING=1
 
 # mpich toolkit
 export MPI_HOME=/root/mpich
@@ -43,9 +44,6 @@ fi
 export ASCEND_OPP_PATH=${ASCEND_HOME}/opp
 export TBE_IMPL_PATH=${ASCEND_OPP_PATH}/built-in/op_impl/ai_core/tbe
 export PYTHONPATH=${TBE_IMPL_PATH}:${PYTHONPATH}
-
-# disable pip root warning
-export PIP_DISABLE_ROOT_WARNING=1
 
 # add library preload
 export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libGLdispatch.so.0

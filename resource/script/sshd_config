@@ -1,5 +1,6 @@
 
 # add for ssh server
+Port 22
 PermitRootLogin yes
 PubkeyAuthentication yes
 ClientAliveInterval 30
