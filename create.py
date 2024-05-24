@@ -85,7 +85,7 @@ def __init_pkgs__(args):
     pkgs.conda_pkg = __get_pkg__("anaconda", conda_path)
     toolkit_path = f"{args.pkg_path}/**/Ascend-cann-toolkit*{args.version}*{arch}*.run"
     pkgs.toolkit_pkg = __get_pkg__("toolkit", toolkit_path)
-    kernel_path = f"{args.pkg_path}/**/Ascend-cann-kernel*{args.version}*{arch}*.run"
+    kernel_path = f"{args.pkg_path}/**/Ascend-cann-kernel*{args.version}*.run"
     pkgs.kernel_pkg = __get_pkg__("kernel", kernel_path)
     mindspore_path = f"{args.pkg_path}/**/mindspore*{arch}*.whl"
     pkgs.mindspore_pkg = __get_pkg__("mindspore", mindspore_path)

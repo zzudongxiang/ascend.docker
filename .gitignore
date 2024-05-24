@@ -1,2 +1,8 @@
+anaconda3/*
 container/*
 software/*
+workdir/*
+var/*
+.*
+.bash*
+.less*
