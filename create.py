@@ -189,7 +189,7 @@ class packages:
             "conda_pkg": self.conda_pkg,
             "toolkit_pkg": self.toolkit_pkg,
             "kernel_pkg": self.kernel_pkg,
-            "cann_version": self.cann_version,
+            "cann_version": self.cann_version.upper(),
             "container_inside_path": CONTAINER_INSIDE_PATH,
             "mindspore_pkg": self.mindspore_pkg,
             "mindspore_name": self.Get_Pkg_Name(self.mindspore_pkg),

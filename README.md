@@ -37,8 +37,12 @@ title: 在Ascend内创建Docker容器
 准备后以上路径和软件后，直接按照如下命令执行即可创建容器，并在容器内执行初始化任务，更新并安装需要的环境。
 
 ```bash
-# 创建名为：test-cann8.0.rc2的容器
-bash ./create.sh "test" "cann8.0.rc2"
+# 查看运行帮助
+python ./create.py -h
+
+# 创建名为：ascend-cann8.0.rc2的容器
+python ./create.py -n "ascend" --version "8.0.rc2" --port 223
+
 # 初始化容器内的环境（在容器内执行）
 bash install.sh && source ~/.bashrc
 ```
