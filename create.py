@@ -43,10 +43,11 @@ def __init_args__():
     )
     parser.add_argument(
         "--pkg_path",
-        default=".",
+        default="./software",
         help="The path where the package will be installed",
     )
     args = parser.parse_args()
+    args.version = args.version.upper()
     return args
 
 
